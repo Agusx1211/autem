@@ -7,11 +7,10 @@ import { useCallback } from "react"
 import { ethers } from "ethers"
 import { providers } from '@0xsequence/multicall'
 
-// export const RPC_MAINNET = "https://cloudflare-eth.com/"
-export const RPC_MAINNET = "https://goerli.infura.io/v3/1a41bb7ab615464cbcd3cd48ece28b5d"
+export const RPC_MAINNET = "https://cloudflare-eth.com/"
 export const FACTORY_ADDRESS = "0xB7e495092749dE8D30CA30B91e437E15e399Ef69"
 export const IMPLEMENTATION_ADDRESS = "0x8114F33b87128DD938F4B69966b7B11C0DEB069F"
-export const DEFAULT_NETWORK = 5
+export const DEFAULT_NETWORK = 1
 
 export function newModal() {
   const providerOptions = {
@@ -19,7 +18,7 @@ export function newModal() {
       package: WalletConnectProvider,
       options: {
         rpc: {
-          5: RPC_MAINNET
+          1: RPC_MAINNET
         }
       }
     },
