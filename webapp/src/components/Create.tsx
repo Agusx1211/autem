@@ -109,19 +109,28 @@ export default function SignIn() {
 
     if (!chainInfo(chainId).supported) return alert('Network not supported')
 
-    const metadata = description === '' ? name === '' ? '' : JSON.stringify([name]) : JSON.stringify([name, description])
-
-    const initialParameters = { owner: solvedOwner.address, beneficiary: solvedBeneficiary.address, window: ethers.BigNumber.from(parsed).div(1000), metadata }
-    const address = addressOf(initialParameters)
-
-    const tx = await Factory__factory.connect(FACTORY_ADDRESS, provider.getSigner(accounts[0])).create(
-      initialParameters.owner,
-      initialParameters.beneficiary,
-      initialParameters.window,
-      initialParameters.metadata
-    )
-
     setOpenBackdrop(true)
+
+    let initialParameters: any
+    let address: string
+    let tx: ethers.ContractTransaction
+
+    try {
+      const metadata = description === '' ? name === '' ? '' : JSON.stringify([name]) : JSON.stringify([name, description])
+
+      initialParameters = { owner: solvedOwner.address, beneficiary: solvedBeneficiary.address, window: ethers.BigNumber.from(parsed).div(1000), metadata }
+      address = addressOf(initialParameters)
+
+      tx = await Factory__factory.connect(FACTORY_ADDRESS, provider.getSigner(accounts[0])).create(
+        initialParameters.owner,
+        initialParameters.beneficiary,
+        initialParameters.window,
+        initialParameters.metadata
+      )
+    } catch (e) {
+      setOpenBackdrop(false)
+      return alert(e.message)
+    }
 
     addTrust && addTrust(address)
     addKnownInitialParameters && addKnownInitialParameters(initialParameters)
