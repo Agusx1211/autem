@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "hardhat test",
-    "build": "hardhat compile",
+    "build": "hardhat compile && yarn --cwd ./webapp build",
+    "start": "yarn --cwd ./webapp start",
     "coverage": "hardhat coverage",
     "watch": "hardhat watch",
     "gas": "REPORT_GAS=true yarn test",
