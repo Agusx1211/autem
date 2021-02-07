@@ -9,7 +9,6 @@ import { Container, Grid, Link } from '@material-ui/core'
 import {
   Switch,
   Route,
-  useHistory,
   HashRouter
 } from "react-router-dom"
 import Detail from './components/Detail'
@@ -25,8 +24,8 @@ import { EXPLORER_ADDR } from './utils/constants'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'GNU General Public License © '}
-      <Link target="_blank" rel="noopener noreferrer" color="inherit" href="https://#">
+      {'GNU General Public License v3.0 © '}
+      <Link target="_blank" rel="noopener noreferrer" color="inherit" href="https://github.com/Agusx1211/autem/blob/master/LICENSE">
         Autem
       </Link>{' '}
       {new Date().getFullYear()}
@@ -93,7 +92,7 @@ function Footer() {
     <Copyright />
     <br/>
     <Grid container spacing={2} justify="center">
-      <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href="https://#">Github</Link>)}</Grid>
+      <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href="https://github.com/Agusx1211/autem">Github</Link>)}</Grid>
       <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href={`${EXPLORER_ADDR}${FACTORY_ADDRESS}`}>Contract</Link>)}</Grid>
       <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href={`${EXPLORER_ADDR}0x3D1A6e00577e2130A20809f14f0FAaC7F5485860`}>Donate</Link>)}</Grid>
       <Grid item>{networkObject}</Grid>
@@ -104,8 +103,6 @@ function Footer() {
 
 export default function App() {
   const classes = useStyles()
-
-  let history = useHistory()
 
   return (
     <React.Fragment>
