@@ -1,0 +1,13 @@
+node_modules
+
+#Hardhat files
+cache
+artifacts
+coverage
+node_modules
+
+config/PROD.env
+typechain
+coverage.json
+
+yarn-error.log

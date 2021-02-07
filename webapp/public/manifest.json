@@ -1,0 +1,15 @@
+{
+  "short_name": "Autem.eth",
+  "name": "Autem.eth minimal dApp for Ethereum trusts.",
+  "icons": [
+    {
+      "src": "scroll_1f4dc.png",
+      "type": "image/png",
+      "sizes": "160x160"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
