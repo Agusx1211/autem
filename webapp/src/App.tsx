@@ -92,6 +92,7 @@ function Footer() {
     <Copyright />
     <br/>
     <Grid container spacing={2} justify="center">
+      <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href="https://medium.com/@agusx1211/introducing-autem-eth-b76d2e08c761">Help</Link>)}</Grid>
       <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href="https://github.com/Agusx1211/autem">Github</Link>)}</Grid>
       <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href={`${EXPLORER_ADDR}${FACTORY_ADDRESS}`}>Contract</Link>)}</Grid>
       <Grid item>{format(<Link color="inherit" target="_blank" rel="noopener noreferrer" href={`${EXPLORER_ADDR}0x3D1A6e00577e2130A20809f14f0FAaC7F5485860`}>Donate</Link>)}</Grid>
