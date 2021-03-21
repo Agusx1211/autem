@@ -164,11 +164,7 @@ export type Web3ContextType = Web3ContextState & {
   connect?: (callback?: () => void) => void
 }
 
-const MulticallOptions = {
-  contract: "0x88b1F30E7b6BefA20880DD8059Fe5C3002A7fD48"
-}
-
-const offlineProvider = new providers.MulticallProvider(new ethers.providers.JsonRpcProvider(RPC_MAINNET), MulticallOptions)
+const offlineProvider = new providers.MulticallProvider(new ethers.providers.JsonRpcProvider(RPC_MAINNET))
 const Web3Context = React.createContext<Web3ContextType>({ modal: newModal(), offlineProvider, readProvider: offlineProvider, chainId: DEFAULT_NETWORK })
 
 export function useWeb3Context() {
